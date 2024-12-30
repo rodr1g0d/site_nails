@@ -17,7 +17,6 @@
             color: white;
             padding: 2rem 0;
             text-align: center;
-            animation: fadeIn 2s ease-in-out;
         }
         header img {
             max-width: 300px;
@@ -64,6 +63,13 @@
             padding: 1.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .service-card img {
             float: left;
@@ -105,57 +111,6 @@
         footer p {
             margin: 0.5rem 0;
         }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .social-links img {
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-        }
-
-        /* Animações */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes letterGlow {
-    0% {
-        color: #f0e1f0;
-        text-shadow: 0 0 2px #c8a2c8;
-    }
-    50% {
-        color: #fff;
-        text-shadow: 0 0 10px #dda0dd, 0 0 20px #f8b4d9;
-    }
-    100% {
-        color: #f0e1f0;
-        text-shadow: 0 0 2px #c8a2c8;
-    }
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-            color: #f0e1f0;
-            display: inline-block;
-        }
-
-        header p span {
-            display: inline-block;
-            animation: letterGlow 1.5s infinite;
-            animation-delay: calc(var(--i) * 0.2s); /* Adiciona atraso por letra */
-        }
-
 
         @keyframes bounce {
             from {
@@ -165,27 +120,12 @@
                 transform: translateY(-10px);
             }
         }
-
         @keyframes glow {
             0% {
                 text-shadow: 0 0 10px #fff, 0 0 20px #f0e1f0, 0 0 30px #dda0dd;
             }
             100% {
                 text-shadow: 0 0 5px #c8a2c8, 0 0 15px #dda0dd, 0 0 25px #f0e1f0;
-            }
-        }
-        @media screen and (max-width: 768px) {
-            nav {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            nav a {
-                margin: 0.5rem 0;
-            }
-            .service-card img {
-                max-width: 80px;
-                margin-right: 0.5rem;
             }
         }
     </style>
@@ -217,62 +157,71 @@
 
     <div class="container" id="servicos">
         <h2>Serviços Disponíveis</h2>
-        <div class="service-list">
-            <div class="service-card">
-                <img src="https://upescoladebeleza.com/wp-content/uploads/2023/02/Unhas-posticas-veja-os-tipos-e-se-vale-a-pena-investir.jpg" alt="Serviço">
-                <h3>Aplicação de Unhas Postiças</h3>
-                <p>Duração: 20 minutos</p>
-                <p class="price">R$ 30,00</p>
-                <p>Apenas a aplicação. As unhas postiças serão fornecidas pelo cliente.</p>
-                <button onclick="window.location.href='agendar.html'">Agendar</button>
-            </div>
-            <div class="service-card">
-                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lppry1af6hxpb0" alt="Serviço">
-                <h3>Cutilagem das Unhas dos Pés</h3>
-                <p>Duração: 50 minutos</p>
-                <p class="price">R$ 36,00</p>
-                <p>Apenas a cutilagem das unhas dos pés.</p>
-                <button onclick="window.location.href='#agenda'">Agendar</button>
-            </div>
-            <div class="service-card">
-                <img src="https://i.pinimg.com/originals/3d/07/63/3d0763db413305ec2ca9648f0746e341.jpg" alt="Serviço">
-                <h3>Esmaltação das Unhas das Mãos</h3>
-                <p>Duração: 30 minutos</p>
-                <p class="price">R$ 19,00</p>
-                <p>O procedimento inclui lixar, cortar e esmaltar as unhas das mãos.</p>
-                <button onclick="window.location.href='agendar.html'">Agendar</button>
-            </div>
-            <div class="service-card">
-                <img src="https://i.pinimg.com/736x/4b/a5/b1/4ba5b1fa261c03054f71d8d442ea26cc.jpg" alt="Serviço">
-                <h3>Esmaltação das Unhas dos Pés</h3>
-                <p>Duração: 30 minutos</p>
-                <p class="price">R$ 21,00</p>
-                <p>O procedimento inclui lixar, cortar e esmaltar as unhas dos pés.</p>
-                <button onclick="window.location.href='agendar.html'">Agendar</button>
-            </div>
-            <div class="service-card">
-                <img src="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2023/11/unhas-francesinhas-2024-novas-ideias.png" alt="Serviço">
-                <h3>Francesinha nas Unhas das Mãos</h3>
-                <p>Duração: 10 minutos</p>
-                <p class="price">R$ 5,00</p>
-                <p>A francesinha é uma nail art clássica, com a ponta branca e base clara.</p>
-                <button onclick="window.location.href='#agenda'">Agendar</button>
-            </div>
-            <div class="service-card">
-                <img src="https://unhadecoradasimples.com.br/wp-content/uploads/2024/04/b4d8060bb3e9e941e15d81228133b2b3.jpg" alt="Serviço">
-                <h3>Francesinha nas Unhas dos Pés</h3>
-                <p>Duração: 10 minutos</p>
-                <p class="price">R$ 5,00</p>
-                <p>A francesinha é uma nail art clássica, com a ponta branca e base clara.</p>
-                <button onclick="window.location.href='#agenda'">Agendar</button>
-            </div>
+        <div class="service-card">
+            <img src="https://upescoladebeleza.com/wp-content/uploads/2023/02/Unhas-posticas-veja-os-tipos-e-se-vale-a-pena-investir.jpg" alt="Serviço">
+            <h3>Aplicação de Unhas Postiças</h3>
+            <p>Duração: 20 minutos</p>
+            <p class="price">R$ 30,00</p>
+            <p>Apenas a aplicação. As unhas postiças serão fornecidas pelo cliente.</p>
+            <button onclick="window.location.href='agendar.html'">Agendar</button>
         </div>
-    </div>
+        <div class="service-card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lppry1af6hxpb0" alt="Serviço">
+            <h3>Cutilagem das Unhas dos Pés</h3>
+            <p>Duração: 50 minutos</p>
+            <p class="price">R$ 36,00</p>
+            <p>Apenas a cutilagem das unhas dos pés.</p>
+            <button onclick="window.location.href='#agenda'">Agendar</button>
+        </div>
+        <div class="service-card">
+            <img src="https://i.pinimg.com/originals/3d/07/63/3d0763db413305ec2ca9648f0746e341.jpg" alt="Serviço">
+            <h3>Esmaltação das Unhas das Mãos</h3>
+            <p>Duração: 30 minutos</p>
+            <p class="price">R$ 19,00</p>
+            <p>O procedimento inclui lixar, cortar e esmaltar as unhas das mãos.</p>
+            <button onclick="window.location.href='agendar.html'">Agendar</button>
+        </div>
+        <div class="service-card">
+            <img src="https://i.pinimg.com/736x/4b/a5/b1/4ba5b1fa261c03054f71d8d442ea26cc.jpg" alt="Serviço">
+            <h3>Esmaltação das Unhas dos Pés</h3>
+            <p>Duração: 30 minutos</p>
+            <p class="price">R$ 21,00</p>
+            <p>O procedimento inclui lixar, cortar e esmaltar as unhas dos pés.</p>
+            <button onclick="window.location.href='agendar.html'">Agendar</button>
+        </div>
+        <div class="service-card">
+            <img src="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2023/11/unhas-francesinhas-2024-novas-ideias.png" alt="Serviço">
+            <h3>Francesinha nas Unhas das Mãos</h3>
+            <p>Duração: 10 minutos</p>
+            <p class="price">R$ 5,00</p>
+            <p>A francesinha é uma nail art clássica, com a ponta branca e base clara.</p>
+            <button onclick="window.location.href='#agenda'">Agendar</button>
+        </div>
+        <div class="service-card">
+            <img src="https://unhadecoradasimples.com.br/wp-content/uploads/2024/04/b4d8060bb3e9e941e15d81228133b2b3.jpg" alt="Serviço">
+            <h3>Francesinha nas Unhas dos Pés</h3>
+            <p>Duração: 10 minutos</p>
+            <p class="price">R$ 5,00</p>
+            <p>A francesinha é uma nail art clássica, com a ponta branca e base clara.</p>
+            <button onclick="window.location.href='#agenda'">Agendar</button>
         </div>
     </div>
     <footer>
         <p>&copy; 2024 Nails Designer - Todos os direitos reservados</p>
         <p>Desenvolvido por RodrigoD</p>
     </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
