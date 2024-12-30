@@ -19,7 +19,7 @@
             text-align: center;
         }
         header img {
-            max-width: 300px;
+            max-width: 200px;
             display: block;
             margin: 0 auto;
         }
@@ -32,6 +32,9 @@
             text-decoration: none;
             color: #e91e63;
             font-weight: bold;
+        }
+        nav a:hover {
+            color: #f8b4d9;
         }
         .container {
             max-width: 900px;
@@ -82,13 +85,11 @@
             background-color: #c494c4;
         }
         footer {
-            footer {
             background-color: #292942;
             color: white;
             text-align: center;
             padding: 1rem;
             margin-top: 2rem;
-        }
         }
         footer p {
             margin: 0.5rem 0;
@@ -103,6 +104,20 @@
             height: 40px;
             cursor: pointer;
         }
+        @media screen and (max-width: 768px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+            .service-card img {
+                max-width: 80px;
+                margin-right: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -115,7 +130,6 @@
         <a href="detalhes.html">Detalhes</a>
         <a href="feedback.html">Feedback</a>
         <a href="agendar.html">Agendar</a>
-        
     </nav>
 
     <div class="container" id="servicos">
