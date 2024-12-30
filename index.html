@@ -128,6 +128,35 @@
             }
         }
 
+        @keyframes letterGlow {
+    0% {
+        color: #f0e1f0;
+        text-shadow: 0 0 2px #c8a2c8;
+    }
+    50% {
+        color: #fff;
+        text-shadow: 0 0 10px #dda0dd, 0 0 20px #f8b4d9;
+    }
+    100% {
+        color: #f0e1f0;
+        text-shadow: 0 0 2px #c8a2c8;
+    }
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            color: #f0e1f0;
+            display: inline-block;
+        }
+
+        header p span {
+            display: inline-block;
+            animation: letterGlow 1.5s infinite;
+            animation-delay: calc(var(--i) * 0.2s); /* Adiciona atraso por letra */
+        }
+
+
         @keyframes bounce {
             from {
                 transform: translateY(0);
@@ -165,8 +194,20 @@
     <header>
         <img src="logo/vick_logo.png" alt="Nails Designer Logo">
         <h1>Bem-vindo(a) à Nails Designer!</h1>
-        <p>Realce sua beleza com nossos serviços!</p>
-    </header>
+        <p>
+            <span style="--i:1">R</span><span style="--i:2">e</span><span style="--i:3">a</span><span style="--i:4">l</span><span style="--i:5">c</span><span style="--i:6">e</span>
+            <span style="--i:7"> </span>
+            <span style="--i:8">s</span><span style="--i:9">u</span><span style="--i:10">a</span>
+            <span style="--i:11"> </span>
+            <span style="--i:12">b</span><span style="--i:13">e</span><span style="--i:14">l</span><span style="--i:15">e</span><span style="--i:16">z</span><span style="--i:17">a</span>
+            <span style="--i:18"> </span>
+            <span style="--i:19">c</span><span style="--i:20">o</span><span style="--i:21">m</span>
+            <span style="--i:22"> </span>
+            <span style="--i:23">n</span><span style="--i:24">o</span><span style="--i:25">s</span><span style="--i:26">s</span><span style="--i:27">o</span><span style="--i:28">s</span>
+            <span style="--i:29"> </span>
+            <span style="--i:30">s</span><span style="--i:31">e</span><span style="--i:32">r</span><span style="--i:33">v</span><span style="--i:34">i</span><span style="--i:35">ç</span><span style="--i:36">o</span><span style="--i:37">s</span>!
+        </p>
+    </header>    
     <nav>
         <a href="#servicos">Serviços</a>
         <a href="detalhes.html">Detalhes</a>
