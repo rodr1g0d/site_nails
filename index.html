@@ -15,13 +15,24 @@
         header {
             background-color: #c8a2c8;
             color: white;
-            padding: 1rem 0;
+            padding: 2rem 0;
             text-align: center;
+            animation: fadeIn 2s ease-in-out;
         }
         header img {
-            max-width: 200px;
+            max-width: 300px;
             display: block;
             margin: 0 auto;
+            animation: bounce 2s infinite alternate;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            animation: glow 2s infinite alternate;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            color: #f0e1f0;
         }
         nav {
             text-align: center;
@@ -104,6 +115,36 @@
             height: 40px;
             cursor: pointer;
         }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #f0e1f0, 0 0 30px #dda0dd;
+            }
+            100% {
+                text-shadow: 0 0 5px #c8a2c8, 0 0 15px #dda0dd, 0 0 25px #f0e1f0;
+            }
+        }
         @media screen and (max-width: 768px) {
             nav {
                 display: flex;
@@ -124,6 +165,7 @@
     <header>
         <img src="logo/vick_logo.png" alt="Nails Designer Logo">
         <h1>Bem-vindo(a) à Nails Designer!</h1>
+        <p>Realce sua beleza com nossos serviços!</p>
     </header>
     <nav>
         <a href="#servicos">Serviços</a>
@@ -149,7 +191,7 @@
                 <p>Duração: 50 minutos</p>
                 <p class="price">R$ 36,00</p>
                 <p>Apenas a cutilagem das unhas dos pés.</p>
-                <button onclick="window.location.href='agendar.html'">Agendar</button>
+                <button onclick="window.location.href='#agenda'">Agendar</button>
             </div>
             <div class="service-card">
                 <img src="https://i.pinimg.com/originals/3d/07/63/3d0763db413305ec2ca9648f0746e341.jpg" alt="Serviço">
@@ -167,6 +209,24 @@
                 <p>O procedimento inclui lixar, cortar e esmaltar as unhas dos pés.</p>
                 <button onclick="window.location.href='agendar.html'">Agendar</button>
             </div>
+            <div class="service-card">
+                <img src="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2023/11/unhas-francesinhas-2024-novas-ideias.png" alt="Serviço">
+                <h3>Francesinha nas Unhas das Mãos</h3>
+                <p>Duração: 10 minutos</p>
+                <p class="price">R$ 5,00</p>
+                <p>A francesinha é uma nail art clássica, com a ponta branca e base clara.</p>
+                <button onclick="window.location.href='#agenda'">Agendar</button>
+            </div>
+            <div class="service-card">
+                <img src="https://unhadecoradasimples.com.br/wp-content/uploads/2024/04/b4d8060bb3e9e941e15d81228133b2b3.jpg" alt="Serviço">
+                <h3>Francesinha nas Unhas dos Pés</h3>
+                <p>Duração: 10 minutos</p>
+                <p class="price">R$ 5,00</p>
+                <p>A francesinha é uma nail art clássica, com a ponta branca e base clara.</p>
+                <button onclick="window.location.href='#agenda'">Agendar</button>
+            </div>
+        </div>
+    </div>
         </div>
     </div>
     <footer>
