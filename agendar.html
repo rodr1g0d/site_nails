@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar - Nails Designer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2f;
+            color: #f4f4f4;
+        }
+        header {
+            background-color: #c8a2c8;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header img {
+            max-width: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .form-section {
+            background: #292942;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 2rem;
+        }
+        input, select, button {
+            width: 96%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #e91e63;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #c8a2c8; /* Cor ao passar o mouse */
+        }
+        .back-button {
+            display: block;
+            margin: 2rem auto; /* Centraliza o botão horizontalmente */
+            padding: 1rem 2rem;
+            text-align: center;
+            background-color: #292942;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            width: 200px; /* Largura do botão */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #292942;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo/vick_logo.png" alt="Nails Designer Logo">
+        <h1>Agendar Horário</h1>
+    </header>
+    <div class="container">
+        <div class="form-section">
+            <form action="/schedule" method="POST">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required>
+
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Seu telefone" required>
+
+                <label for="date">Data:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Horário:</label>
+                <select id="time" name="time">
+                    <option value="06:00">06:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="15:00">15:00</option>
+                </select>
+
+                <button type="submit">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </div>
+    <a href="index.html" class="back-button">Voltar para o Início</a>
+    </div>
+    </div>
+    <footer>
+        <p style="text-align: center;">&copy; 2024 Nails Designer - Todos os direitos reservados</p>
+        <p style="text-align: center;">Desenvolvido por RodrigoD</p>
+    </footer>
+</body>
+</html>
+</body>
+</html>
