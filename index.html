@@ -12,55 +12,145 @@
             background-color: #1e1e2f;
             color: #f4f4f4;
         }
+
+        @font-face {
+            font-family: 'The Seasons';
+            src: url('fontes/the-seasons.ttf') format('truetype');
+        }
+
+        header h1, header p {
+            font-family: 'The Seasons', sans-serif;
+        }
+
         header {
-            background-color: #c8a2c8;
+            background-color: #f6eff6;
             color: white;
             padding: 2rem 0;
             text-align: center;
         }
+
         header p span {
-        display: inline-block;
-        animation: letterGlow 1.5s infinite ease-in-out;
-        animation-delay: calc(var(--i) * 0.1s);
+            display: inline-block;
+            animation: letterGlow 1.5s infinite ease-in-out;
+            animation-delay: calc(var(--i) * 0.1s);
         }
+
         header img {
             max-width: 300px;
             display: block;
             margin: 0 auto;
             animation: bounce 2s infinite alternate;
         }
+
         header h1 {
             font-size: 2.5rem;
-            animation: glow 2s infinite alternate;
+            animation: letterGlow 1.5s infinite alternate;
+            color: #c14E76; /* Cor base */
+            text-shadow: 0 0 2px #c14E76, 0 0 5px #c14E76;
         }
+
         header p {
             font-size: 1.2rem;
             margin-top: 0.5rem;
             color: #f0e1f0;
         }
+
         nav {
             text-align: center;
             margin: 1rem 0;
         }
+
         nav a {
             margin: 0 1rem;
             text-decoration: none;
             color: #e91e63;
             font-weight: bold;
         }
+
         nav a:hover {
             color: #f8b4d9;
         }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            background-color: white;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+
         .container {
             max-width: 900px;
             margin: auto;
             padding: 2rem;
         }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .popup.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-content {
+            background: #292942;
+            color: #f4f4f4;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .popup-content button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #c14E76;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-content button:hover {
+            background-color: #a12d58;
+        }
+
+        /* Serviços */
         .service-list {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
+
         .service-card {
             background: #292942;
             border: 1px solid #444;
@@ -72,65 +162,37 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+
         .service-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         .service-card img {
             float: left;
             max-width: 100px;
             margin-right: 1rem;
             border-radius: 4px;
         }
-        .service-card h3 {
-            margin: 0;
-            color: #c8a2c8;
-        }
-        .service-card p {
-            margin: 0.5rem 0;
-            font-size: 0.9rem;
-        }
-        .service-card .price {
-            font-weight: bold;
-            color: #fff;
-        }
-        .service-card button {
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #dda0dd;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .service-card button:hover {
-            background-color: #c494c4;
-        }
-        footer {
-            background-color: #292942;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-        footer p {
-            margin: 0.5rem 0;
-        }
 
         @keyframes letterGlow {
-        0% {
-            color: #f0e1f0;
-            text-shadow: 0 0 2px #c8a2c8;
+            0% {
+                color: #c14E76;
+                text-shadow: 0 0 2px #c14E76, 0 0 5px #c14E76;
+            }
+
+            50% {
+                color: #f08ba7;
+                text-shadow: 0 0 10px #f08ba7, 0 0 20px #ffb8d2;
+            }
+
+            100% {
+                color: #c14E76;
+                text-shadow: 0 0 2px #c14E76, 0 0 5px #c14E76;
+            }
         }
-        50% {
-            color: #fff;
-            text-shadow: 0 0 10px #dda0dd, 0 0 20px #f8b4d9;
-        }
-        100% {
-            color: #f0e1f0;
-            text-shadow: 0 0 2px #c8a2c8;
-        }
-    }
+    
+    
 
         @media screen and (max-width: 768px) {
             nav {
@@ -169,20 +231,25 @@
 <body>
     <header>
         <img src="logo/vick_logo.png" alt="Nails Designer Logo">
-        <h1>Bem-vindo(a) à Nails Designer!</h1>
+        <h1>Sejam Bem Vindas A Vitória Siqueira Nails Designer Studio
+        </h1>
         <p>
             <span style="--i:1">R</span><span style="--i:2">e</span><span style="--i:3">a</span><span style="--i:4">l</span><span style="--i:5">c</span><span style="--i:6">e</span>
             <span style="--i:7"> </span>
-            <span style="--i:8">s</span><span style="--i:9">u</span><span style="--i:10">a</span>
-            <span style="--i:11"> </span>
-            <span style="--i:12">b</span><span style="--i:13">e</span><span style="--i:14">l</span><span style="--i:15">e</span><span style="--i:16">z</span><span style="--i:17">a</span>
+            <span style="--i:8">a</span><span style="--i:9">i</span><span style="--i:10">n</span><span style="--i:11">d</span><span style="--i:12">a</span>
+            <span style="--i:13"> </span>
+            <span style="--i:14">m</span><span style="--i:15">a</span><span style="--i:16">i</span><span style="--i:17">s</span>
             <span style="--i:18"> </span>
-            <span style="--i:19">c</span><span style="--i:20">o</span><span style="--i:21">m</span>
+            <span style="--i:19">s</span><span style="--i:20">u</span><span style="--i:21">a</span>
             <span style="--i:22"> </span>
-            <span style="--i:23">n</span><span style="--i:24">o</span><span style="--i:25">s</span><span style="--i:26">s</span><span style="--i:27">o</span><span style="--i:28">s</span>
+            <span style="--i:23">b</span><span style="--i:24">e</span><span style="--i:25">l</span><span style="--i:26">e</span><span style="--i:27">z</span><span style="--i:28">a</span>
             <span style="--i:29"> </span>
-            <span style="--i:30">s</span><span style="--i:31">e</span><span style="--i:32">r</span><span style="--i:33">v</span><span style="--i:34">i</span><span style="--i:35">ç</span><span style="--i:36">o</span><span style="--i:37">s</span>!
-        </p>
+            <span style="--i:30">n</span><span style="--i:31">o</span>
+            <span style="--i:32"> </span>
+            <span style="--i:33">m</span><span style="--i:34">e</span><span style="--i:35">u</span>
+            <span style="--i:36"> </span>
+            <span style="--i:37">e</span><span style="--i:38">s</span><span style="--i:39">p</span><span style="--i:40">a</span><span style="--i:41">ç</span><span style="--i:42">o</span><span style="--i:43"></span>
+        </p>        
     </header> 
     <nav>
         <a href="#servicos">Serviços</a>
@@ -195,56 +262,76 @@
         <h2>Serviços Disponíveis</h2>
         <div class="service-card">
             <img src="https://upescoladebeleza.com/wp-content/uploads/2023/02/Unhas-posticas-veja-os-tipos-e-se-vale-a-pena-investir.jpg" alt="Serviço">
-            <h3>Aplicação de Unhas Postiças</h3>
-            <p>Duração: 20 minutos</p>
-            <p class="price">R$ 30,00</p>
+            <h3>Cutilagem (sem esmaltação)</h3>
+            <!--<p>Duração: 10 minutos</p-->
+            <p class="price">R$ 15,00</p>
             <p>Apenas a aplicação. As unhas postiças serão fornecidas pelo cliente.</p>
             <button onclick="window.location.href='agendar.html'">Agendar</button>
         </div>
         <div class="service-card">
             <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lppry1af6hxpb0" alt="Serviço">
-            <h3>Cutilagem das Unhas dos Pés</h3>
-            <p>Duração: 50 minutos</p>
-            <p class="price">R$ 36,00</p>
+            <h3>Manicure (cutilagem e esmaltação)</h3>
+            <!--<p>Duração: 10 minutos</p-->
+            <p class="price">R$ 25,00</p>
             <p>Apenas a cutilagem das unhas dos pés.</p>
             <button onclick="window.location.href='#agenda'">Agendar</button>
         </div>
         <div class="service-card">
             <img src="https://i.pinimg.com/originals/3d/07/63/3d0763db413305ec2ca9648f0746e341.jpg" alt="Serviço">
-            <h3>Esmaltação das Unhas das Mãos</h3>
-            <p>Duração: 30 minutos</p>
-            <p class="price">R$ 19,00</p>
+            <h3>Pedicure (cutilagem e esmaltação)</h3>
+            <!--<p>Duração: 10 minutos</p-->
+            <p class="price">R$ 25,00</p>
             <p>O procedimento inclui lixar, cortar e esmaltar as unhas das mãos.</p>
             <button onclick="window.location.href='agendar.html'">Agendar</button>
         </div>
         <div class="service-card">
             <img src="https://i.pinimg.com/736x/4b/a5/b1/4ba5b1fa261c03054f71d8d442ea26cc.jpg" alt="Serviço">
-            <h3>Esmaltação das Unhas dos Pés</h3>
-            <p>Duração: 30 minutos</p>
-            <p class="price">R$ 21,00</p>
+            <h3>Spa das mãos (esfoliação, hidratação,  massagem, cutilagem e esmaltação)</h3>
+            <!--<p>Duração: 10 minutos</p-->
+            <p class="price">R$ 35,00</p>
             <p>O procedimento inclui lixar, cortar e esmaltar as unhas dos pés.</p>
             <button onclick="window.location.href='agendar.html'">Agendar</button>
         </div>
         <div class="service-card">
             <img src="https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2023/11/unhas-francesinhas-2024-novas-ideias.png" alt="Serviço">
-            <h3>Francesinha nas Unhas das Mãos</h3>
-            <p>Duração: 10 minutos</p>
-            <p class="price">R$ 5,00</p>
+            <h3>Spa dos pés (esfoliação, hidratação,  massagem, cutilagem e esmaltação)</h3>
+            <!--<p>Duração: 10 minutos</p-->
+            <p class="price">R$ 40,00</p>
             <p>A francesinha é uma nail art clássica, com a ponta branca e base clara.</p>
             <button onclick="window.location.href='#agenda'">Agendar</button>
         </div>
         <div class="service-card">
             <img src="https://unhadecoradasimples.com.br/wp-content/uploads/2024/04/b4d8060bb3e9e941e15d81228133b2b3.jpg" alt="Serviço">
-            <h3>Francesinha nas Unhas dos Pés</h3>
-            <p>Duração: 10 minutos</p>
-            <p class="price">R$ 5,00</p>
+            <h3>Esmaltação em gel (cutilagem e esmaltação)</h3>
+            <!--<p>Duração: 10 minutos</p-->
+            <p class="price">R$ 35,00</p>
             <p>A francesinha é uma nail art clássica, com a ponta branca e base clara.</p>
             <button onclick="window.location.href='#agenda'">Agendar</button>
+
+            <p>Desenhos manuais e pedrarias não incluso. Valores sujeitos a alteração dependendo da escolha de decoração.</p>
         </div>
     </div>
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Desenhos manuais e pedrarias não incluso. Valores sujeitos a alteração dependendo da escolha de decoração.</p>
+            <button id="closePopup">Entendido</button>
+        </div>
+    </div>
+    <script>
+        // Mostrar o popup após 3 segundos
+        setTimeout(() => {
+            document.getElementById('popup').classList.add('show');
+        }, 3000);
+
+        // Fechar o popup ao clicar no botão
+        document.getElementById('closePopup').addEventListener('click', () => {
+            document.getElementById('popup').classList.remove('show');
+        });
+    </script>
     <footer>
-        <p>&copy; 2024 Nails Designer - Todos os direitos reservados</p>
-        <p>Desenvolvido por RodrigoD</p>
+        <p style="text-align: center;">&copy; 2024 Nails Designer - Todos os direitos reservados</p>
+        <p style="text-align: center;">Desenvolvido por RodrigoD</p>
     </footer>
     <script>
         const observer = new IntersectionObserver((entries) => {
@@ -259,5 +346,9 @@
             observer.observe(card);
         });
     </script>
+    </footer>
+    <div class="whatsapp-button" onclick="window.open('https://wa.me/5511994849685?text=Ol%C3%A1.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20de%20como%20fa%C3%A7o%20pra%20estar%20com%20as%20unhas%20maravilhosas%20%F0%9F%98%8D%20', '_blank')">
+        <img src="https://pngimg.com/uploads/whatsapp/whatsapp_PNG20.png" alt="WhatsApp">
+    </div>    
 </body>
 </html>
